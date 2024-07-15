@@ -4,6 +4,18 @@ import TextInputComp from "../../components/TextInputComp";
 import { StyleSheet } from "react-native";
 import RedButton from "../../components/RedButton";
 
+
+const Data = [
+  {
+    id:'1',
+    title: "My Listing",
+  },
+  { id:'2',
+    title: "My Messages",
+  },
+];
+
+
 function Products(props) {
   return (
     <View style={styles.container}>
@@ -14,7 +26,7 @@ function Products(props) {
         <TextInputComp placeholder="Price" />
       </View>
       <View style={styles.textinput}>
-        <TextInputComp placeholder="Category" />
+        <TextInputComp placeholder="Category"  dropicon='chevron-circle-down' Data={Data}/>
       </View>
       <View style={styles.textinput}>
         <TextInputComp placeholder="Description" />

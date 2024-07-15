@@ -8,9 +8,13 @@ import MyAccountScreen from "./apps/screens/MyAccountScreen";
 import ListingScreen from "./apps/screens/listingScreen";
 import Register from "./apps/screens/register";
 import Products from "./apps/screens/product";
+import { Switch } from "react-native";
+import { useState } from "react";
 
 
 export default function App() {
+  const [isNew, setIsNew] = useState(false);
+  console.log(isNew)
   return (
     <Screen>
       <Products/>
