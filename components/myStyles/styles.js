@@ -1,21 +1,19 @@
 import { StyleSheet } from "react-native";
 
-styles = StyleSheet.create({
-  apptext: {
-    fontSize: 20,
-    color: "lightblue",
-    fontStyle: "italic",
-  },
-  container: {
-    flex: 1,
-  },
-  textheader: {
-    fontSize: 30,
-    color: "blue",
-    textTransform: "capitalize",
-    textDecorationLine: "s",
-    fontWeight: "700",
-  },
+import Styles from "../config";
+
+const reStyles = StyleSheet.create({
+
+  flatListContainer: {
+    width:'100%',
+    marginTop:20,
+    padding: 20,
+    backgroundColor: Styles.colors.ligthWhiteBg,
+    
+  }
+
+
+
 });
 
-export default styles;
+export default reStyles;

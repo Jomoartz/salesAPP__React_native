@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Button, TouchableOpacity, } from "react-native";
 
-import Styles from "../../components/config";
+import Styles from "./config";
 
-function Login(props) {
+function RedButton({placeholder}) {
   return (
     <View style={style.container}>
       <TouchableOpacity style={style.button}>
@@ -11,9 +11,9 @@ function Login(props) {
           onPress={() => {
             console.log("press");
           }}
-          title="Login"
+          title={placeholder}
           color="#910417"
-          accessibilityLabel="Login with this button"
+          accessibilityLabel='button'
         />
       </TouchableOpacity>
     </View>
@@ -25,8 +25,6 @@ const style = {
     width: "100%",
     height: "100%",
     backgroundColor: Styles.colors.primary,
-    flexDirection: "column",
-    justifyContent: "center",
   },
   button: {
     borderRadius: 25,
@@ -34,4 +32,4 @@ const style = {
   },
 };
 
-export default Login;
+export default RedButton;

@@ -33,8 +33,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     backgroundColor: Styles.colors.darkWhiteBg,
-    paddingTop: 30,
-    paddingBottom: 20,
+    paddingTop: 5,
   },
   boxContainer: {
     borderRadius: 20,

@@ -1,5 +1,5 @@
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { View } from "react-native";
 
 function Icons({
@@ -15,9 +15,11 @@ function Icons({
         height: size,
         borderRadius: size / 2,
         backgroundColor,
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} />
+      <FontAwesome name={name} color={iconColor} size={size * 0.5} />
     </View>
   );
 }
