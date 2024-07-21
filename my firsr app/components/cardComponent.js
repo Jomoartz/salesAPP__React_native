@@ -6,7 +6,7 @@ import Styles from "./config";
 //this component takes in image source: require(/path)
 // title = '', subtitle = ''. props for text.
 
-export default function CardComponent({ image, title, subtitle, ...props }) {
+export default function CardComponent({ image, title, subtitle, appTextTitle, appTextSubtitle, ...props }) {
   const screen = Dimensions.get("window");
 
   return (
@@ -21,8 +21,8 @@ export default function CardComponent({ image, title, subtitle, ...props }) {
           resizeMode="contain"
         />
         <View style={styles.textContainer}>
-          <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.subtitle}>{subtitle} </AppText>
+          <AppText style={styles.title} {...appTextTitle}>{title}</AppText>
+          <AppText style={styles.subtitle} {...appTextSubtitle}>{subtitle} </AppText>
         </View>
       </View>
     </View>
