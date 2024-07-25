@@ -1,20 +1,19 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native"
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { View, Image, StyleSheet } from "react-native";
 
 import colors from "../config/colors";
 import ListItem from "../components/lists/ListItem";
 import Text from "../components/Text";
 
-function ListingDetailsScreen({route}) {
-  const listings = route.params;
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
+
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
     <View>
-      <Image style={styles.image} source={listings.image} />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{listings.title}</Text>
-        <Text style={styles.price}>{listings.price}</Text>
+        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.price}>${listing.price}</Text>
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/mosh.jpg")}
@@ -24,7 +23,6 @@ function ListingDetailsScreen({route}) {
         </View>
       </View>
     </View>
-    </GestureHandlerRootView>
   );
 }
 

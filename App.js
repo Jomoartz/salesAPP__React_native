@@ -1,16 +1,14 @@
-import * as React from "react";
-import AppNavigator from "./app/Navigattion/AppNavigator";
-import AuthNavigator from "./app/Navigattion/AuthNavigator";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import Screen from "./app/components/Screen";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
-{  <ListingDetailsScreen/>
-}
 
 export default function App() {
-  return (
-      <AppNavigator/> 
-
+  return(
+    <NavigationContainer theme={navigationTheme}>
+<AppNavigator />
+</NavigationContainer>
   );
 }

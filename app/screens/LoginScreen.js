@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Image, Button } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
@@ -13,7 +13,6 @@ const validationSchema = Yup.object().shape({
 function LoginScreen(props) {
   return (
     <Screen style={styles.container}>
-
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
 
       <Form
