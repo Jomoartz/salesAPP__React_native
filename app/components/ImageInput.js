@@ -12,7 +12,15 @@ import * as ImagePicker from "expo-image-picker";
 import colors from "../config/colors";
 
 function ImageInput({ imageUri, onChangeImage }) {
-  //You dont need permissions to access camera library. --expo image picker
+  
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!granted) alert("You need to enable permission to access the library.");
+  };
 
   const handlePress = () => {
     if (!imageUri) selectImage();
@@ -29,7 +37,8 @@ function ImageInput({ imageUri, onChangeImage }) {
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.5,
       });
-      if (!result.cancelled) onChangeImage(result.uri);
+      if (!result.cancelled) onChangeImage (result.assets[0].uri);
+
     } catch (error) {
       console.log("Error reading an image", error);
     }

@@ -5,19 +5,14 @@ const endpoint = "/listings"
 
 
 const listingsApi = async () => {
-    try {
       const response = await client.get(endpoint);
       if (!response.ok) {
           console.log(response.problem);
+          return null;
       }
-      const Data = response.data;
-
-      return Data;
+      return response.data;  
       
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
+    };
   
  
 export default listingsApi;
